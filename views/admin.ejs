@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="admin-body">
+
+<div class="admin-container">
+
+  <div style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+    <h1 class="admin-title" style="margin:0;">管理者ダッシュボード</h1>
+    <a href="/logout" class="edit-btn" style="text-decoration:none;">ログアウト</a>
+  </div>
+
+  <!-- ================= Work 一覧 ================= -->
+  <section class="admin-section">
+    <h2 class="admin-section-title">作品一覧（Works）</h2>
+
+    <div class="admin-grid">
+      <% works.forEach(w => { %>
+        <div class="admin-card">
+          <img src="<%= w.image %>" class="admin-thumb">
+
+          <div class="admin-card-content">
+            <h3 class="admin-card-title"><%= w.title %></h3>
+          </div>
+
+          <div class="admin-actions">
+            <a href="/admin/work/<%= w.id %>/edit" class="edit-btn">編集</a>
+
+            <form action="/admin/work/<%= w.id %>/delete" method="POST" style="margin:0;">
+              <button type="submit" class="delete-btn" onclick="return confirm('本当に削除しますか？')">
+                削除
+              </button>
+            </form>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </section>
+
+  <!-- ================= Work 追加 ================= -->
+  <section class="admin-form-section">
+    <h3 class="admin-section-title">作品を追加</h3>
+
+    <form action="/admin/work" method="POST" class="admin-form">
+      <input type="text" name="title" placeholder="タイトル" required>
+      <textarea name="desc" placeholder="説明" required></textarea>
+
+      <input
+        type="text"
+        name="image"
+        placeholder="画像パス（例：/assets/works/sample.jpg）"
+        required
+      >
+      <small style="opacity:0.7; line-height:1.5;">
+        画像は Git 管理（public/assets 配下など）を推奨。Render でも消えずに運用できます。
+      </small>
+
+      <button type="submit" class="submit-btn">追加</button>
+    </form>
+  </section>
+
+  <hr class="admin-divider">
+
+  <!-- ================= Project 一覧 ================= -->
+  <section class="admin-section">
+    <h2 class="admin-section-title">プロジェクト一覧（Projects）</h2>
+
+    <div class="admin-grid">
+      <% projects.forEach(p => { %>
+        <div class="admin-card">
+          <img src="<%= p.image %>" class="admin-thumb">
+
+          <div class="admin-card-content">
+            <h3 class="admin-card-title"><%= p.title %></h3>
+
+            <form action="/admin/project/<%= p.id %>/featured" method="POST" style="margin-top:8px;">
+              <label style="display:flex; align-items:center; gap:8px; font-size:0.95rem;">
+                <input
+                  type="checkbox"
+                  name="featured"
+                  <%= p.featured ? "checked" : "" %>
+                  onchange="this.form.submit()"
+                >
+                Homeに表示
+              </label>
+            </form>
+          </div>
+
+          <div class="admin-actions">
+            <a href="/admin/project/<%= p.id %>/edit" class="edit-btn">編集</a>
+
+            <form action="/admin/project/<%= p.id %>/delete" method="POST" style="margin:0;">
+              <button type="submit" class="delete-btn" onclick="return confirm('本当に削除しますか？')">
+                削除
+              </button>
+            </form>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </section>
+
+  <!-- ================= Project 追加 ================= -->
+  <section class="admin-form-section">
+    <h3 class="admin-section-title">プロジェクトを追加</h3>
+
+    <form action="/admin/project" method="POST" class="admin-form">
+      <input type="text" name="slug" placeholder="slug（例：frc）" required>
+      <input type="text" name="title" placeholder="タイトル" required>
+      <input type="text" name="summary" placeholder="サマリー" required>
+      <textarea name="overview" placeholder="概要" required></textarea>
+      <textarea name="background" placeholder="背景" required></textarea>
+      <textarea name="approach" placeholder="アプローチ" required></textarea>
+      <textarea name="result" placeholder="結果" required></textarea>
+
+      <label style="display:flex; align-items:center; gap:8px;">
+        <input type="checkbox" name="featured">
+        Homeに表示（featured）
+      </label>
+
+      <input
+        type="text"
+        name="image"
+        placeholder="画像パス（例：/assets/projects/frc.jpg）"
+        required
+      >
+      <small style="opacity:0.7; line-height:1.5;">
+        画像は public/assets に配置して Git で管理。DB にはパスだけ保存します。
+      </small>
+
+      <button type="submit" class="submit-btn">追加</button>
+    </form>
+  </section>
+
+</div>
+
+</body>
+</html>

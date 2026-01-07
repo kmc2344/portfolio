@@ -1,0 +1,30 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Work {
+  id       Int     @id @default(autoincrement())
+  title    String
+  desc     String
+  image    String
+  createdAt DateTime @default(now())
+}
+
+model Project {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  title       String
+  summary     String
+  overview    String
+  background  String
+  approach    String
+  result      String
+  image       String
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}

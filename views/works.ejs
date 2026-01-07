@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Works</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<%- include("partials/header") %>
+
+<section class="page-section">
+  <div class="container">
+
+    <h1 class="section-title">Works</h1>
+
+    <div class="works-grid">
+
+      <% works.forEach(work => { %>
+      <div class="work-card">
+        <img src="<%= work.image %>" class="work-img">
+        <h3><%= work.title %></h3>
+        <p><%= work.desc %></p>
+      </div>
+      <% }) %>
+
+    </div>
+
+  </div>
+</section>
+
+
+<%- include("partials/footer") %>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>管理者ログイン</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="login-body">
+
+<div class="login-container">
+  <h1>管理者ログイン</h1>
+
+  <% if (error) { %>
+    <p class="login-error"><%= error %></p>
+  <% } %>
+
+  <form action="/login" method="POST" class="login-form">
+    <input type="text" name="username" placeholder="ユーザー名" required>
+    <input type="password" name="password" placeholder="パスワード" required>
+
+    <button type="submit" class="login-btn">ログイン</button>
+  </form>
+</div>
+
+</body>
+</html>

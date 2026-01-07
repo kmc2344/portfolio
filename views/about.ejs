@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Portfolio</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<%- include("partials/header") %>
+
+<section class="page-section">
+  <div class="container">
+
+    <!-- 上段：写真＋基本情報 -->
+    <div class="about-top">
+
+      <!-- 写真 -->
+      <div class="about-photo">
+        <img src="/about.JPG" alt="プロフィール写真">
+      </div>
+
+      <!-- 情報 -->
+      <div class="about-content">
+
+        <p class="about-role">Engineering / IoT / Robotics</p>
+
+        <h1 class="about-name">
+          吉田 尚翔
+          <span>Naoto Yoshida</span>
+        </h1>
+
+        <div class="about-info-grid">
+
+          <div class="about-info-box">
+            <h3>基本情報</h3>
+            <p>
+              高専在学。<br>
+              IoT・ロボティクス・Webを横断して制作している。
+            </p>
+          </div>
+
+          <div class="about-info-box">
+            <h3>強み</h3>
+            <p>
+              ハードとソフトの両方を扱っている。<br>
+              使う人の体験を起点に設計している。
+            </p>
+          </div>
+
+          <div class="about-info-box">
+            <h3>趣味</h3>
+            <p>
+              ロボット、電子工作、ゲーム、写真。<br>
+              技術と表現の両方に触れている。
+            </p>
+          </div>
+          <div class="about-info-box">
+            <h3>現在の活動</h3>
+            <p>
+              FRCチーム Hanabi<br>
+              NPO法人 燈 理事
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 下段：自己紹介文（横長） -->
+    <div class="about-description-wide">
+      <p>
+        ハードウェアとソフトウェアの両方を扱いながら、
+        実際に使われることを前提としたものづくりをしている。
+      </p>
+      <p>
+        ロボティクスやIoTのプロジェクトでは、
+        動作だけでなく、運用や改善、チームでの進め方まで含めて設計している。
+        Webアプリケーションでは、UIや情報の伝わりやすさを重視して実装している。
+      </p>
+      <p>
+        技術そのものを目的にするのではなく、
+        「誰にとって、どんな価値があるのか」を常に考えている。
+        小さな改善を積み重ねながら、完成度を高めていくスタイルで制作している。
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<%- include("partials/footer") %>
+
+</body>
+</html>

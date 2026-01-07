@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<%- include("partials/header") %>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1 class="title">𠮷田尚翔のポートフォリオ</h1>
+    <p class="subtitle">人を動かすために、自分を動かす</p>
+    <p class="tagline">Full-stack Engineering × IoT × Robotics</p>
+  </div>
+</section>
+
+<!-- Profile -->
+<section class="profile">
+  <div class="container profile-wrap">
+    <img src="/about.JPG" class="profile-img">
+    <div class="profile-text">
+      <h2>About Me</h2>
+      <p>ハードとソフトの両方を扱いながら、使う人の体験を意識した開発を続けています。</p>
+      <p>IoT、ロボティクス、Webアプリなど幅広く取り組み、小さな改善を積み重ねる制作を大切にしています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Projects（★ featured Project をDBから表示） -->
+<section class="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+
+    <% if (projects.length === 0) { %>
+      <p style="opacity:0.7;">現在、トップに表示するプロジェクトはありません。</p>
+    <% } %>
+
+    <% projects.forEach(project => { %>
+      <div class="project-card">
+        <img src="<%= project.image %>" class="thumbnail">
+        <div class="project-info">
+          <h3><%= project.title %></h3>
+          <p><%= project.summary %></p>
+          <a href="/project/<%= project.slug %>" class="detail-btn">
+            詳細を見る →
+          </a>
+        </div>
+      </div>
+    <% }) %>
+
+  </div>
+</section>
+
+<!-- Works（DBから3件） -->
+<section class="works">
+  <div class="container">
+    <h2 class="section-title">Works</h2>
+
+    <div class="works-grid">
+      <% works.forEach(work => { %>
+        <div class="work-card">
+          <img src="<%= work.image %>" class="work-img">
+          <h3><%= work.title %></h3>
+          <p><%= work.desc %></p>
+        </div>
+      <% }) %>
+    </div>
+
+    <a href="/works" class="detail-btn" style="margin-top:20px;">
+      もっと見る →
+    </a>
+  </div>
+</section>
+
+<!-- History -->
+<section class="history">
+  <div class="container">
+    <h2 class="section-title">History</h2>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">2022</div>
+        <div class="tl-content">高専入学。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2023</div>
+        <div class="tl-content">IoT試作を開始。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2024</div>
+        <div class="tl-content">FRCを立ち上げ。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2025</div>
+        <div class="tl-content">ポートフォリオ制作へ。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer") %>
+
+</body>
+</html>

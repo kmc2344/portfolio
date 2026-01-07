@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Tech × Accessibility</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #005BBB;
+      --yellow: #FFD500;
+      --black: #000000;
+      --gray: #F2F2F2;
+      --text: #333333;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background-color: #FFFFFF;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 40px 20px;
+      border-left: 6px solid var(--blue);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin: 0;
+      font-weight: 700;
+      color: var(--blue);
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 10px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .tagline {
+      margin-top: 20px;
+      font-size: 18px;
+      color: var(--text);
+      border-left: 4px solid var(--yellow);
+      padding-left: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      border: 2px solid var(--blue);
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+    .btn:hover {
+      background-color: var(--blue);
+      color: white;
+    }
+
+    /* Skills Section */
+    section {
+      padding: 80px 0;
+      border-top: 1px solid var(--gray);
+    }
+
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .skill-card {
+      padding: 20px;
+      background: var(--gray);
+      border-radius: 10px;
+    }
+
+    .skill-card h3 {
+      margin-top: 0;
+      border-left: 6px solid var(--yellow);
+      padding-left: 10px;
+      font-size: 20px;
+    }
+
+    /* Projects */
+    .project-card {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px solid var(--blue);
+      transition: 0.2s;
+      margin-bottom: 30px;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 0 10px rgba(0,91,187,0.3);
+      transform: translateY(-3px);
+    }
+
+    .project-thumb {
+      width: 180px;
+      height: 120px;
+      background: var(--gray);
+      border-radius: 6px;
+    }
+
+    .project-info h4 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      color: var(--blue);
+    }
+
+    .label {
+      display: inline-block;
+      background: var(--yellow);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Engineering Accessibility.</h1>
+    <h2>未来的で、誰にとっても使いやすい技術を。</h2>
+
+    <p class="tagline">
+      FULL-STACK ENGINEER × ACCESSIBLE UI DESIGN
+    </p>
+
+    <a href="#projects" class="btn">プロジェクトを見る →</a>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <h3 class="section-title">Skills</h3>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Engineering</h3>
+        <ul>
+          <li>Node.js / Express / Prisma</li>
+          <li>ESP32 / Arduino / M5Stack</li>
+          <li>Sensor Integration</li>
+          <li>Java (FRC Control)</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>Design</h3>
+        <ul>
+          <li>Accessible UI / UX</li>
+          <li>Figma / Prototyping</li>
+          <li>Interaction Design</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>Team & Strategy</h3>
+        <ul>
+          <li>プロジェクト推進・調整</li>
+          <li>FRCチーム立ち上げ</li>
+          <li>ユーザー観察・ヒアリング</li>
+          <li>教育・ワークショップ設計</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h3 class="section-title">Projects</h3>
+
+    <div class="project-card">
+      <div class="project-thumb"></div>
+      <div class="project-info">
+        <div class="label">ACCESSIBILITY</div>
+        <h4>プロジェクトタイトル</h4>
+        <p>ここにプロジェクト概要が入ります。アクセシブルデザイン × テクノロジーを活用した事例など。</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-thumb"></div>
+      <div class="project-info">
+        <div class="label">IoT / UI DESIGN</div>
+        <h4>プロジェクトタイトル</h4>
+        <p>IoTセンシングやUI設計を組み合わせたプロジェクトの紹介。</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

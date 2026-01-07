@@ -1,0 +1,657 @@
+/******************************************************
+ * 基本設定（色・フォント）
+ ******************************************************/
+:root {
+  --blue: #005BBB;
+  --yellow: #FFD500;
+  --text: #333;
+  --gray: #F2F2F2;
+  --font-jp: 'Noto Sans JP', sans-serif;
+  --font-en: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-jp), var(--font-en);
+  color: var(--text);
+  background: #fff;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+/******************************************************
+ * レイアウト（コンテナ）
+ ******************************************************/
+.container {
+  max-width: 880px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/******************************************************
+ * ヘッダー
+ ******************************************************/
+.main-header {
+  background: #fff;
+  border-bottom: 3px solid var(--blue);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.header-container {
+  max-width: 880px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.nav a {
+  margin-left: 20px;
+  font-weight: 600;
+}
+
+.nav .active {
+  color: var(--yellow);
+}
+
+/******************************************************
+ * Hero（トップの大見出し）
+ ******************************************************/
+.hero {
+  padding: 80px 20px;
+  border-left: 8px solid var(--blue);
+  background: #ffffff;
+}
+
+.title {
+  font-size: 48px;
+  color: var(--blue);
+  font-weight: 700;
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.tagline {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #666;
+}
+
+/******************************************************
+ * Profile（写真＋文章）
+ ******************************************************/
+.profile {
+  padding: 60px 20px;
+}
+
+.profile-wrap {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.profile-img {
+  width: 210px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 4px solid var(--blue);
+}
+
+.profile-text h2 {
+  margin-bottom: 8px;
+}
+
+/******************************************************
+ * About / Intro
+ ******************************************************/
+.intro-text,
+.page-section .intro-text {
+  background: var(--gray);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 5px solid var(--blue);
+}
+
+.section-title {
+  font-size: 32px;
+  color: var(--blue);
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/******************************************************
+ * Projects（メインプロジェクト）
+ ******************************************************/
+.project-card {
+  display: flex;
+  gap: 20px;
+  background: var(--gray);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  border-left: 8px solid var(--blue);
+}
+
+.thumbnail {
+  width: 180px;
+  height: 120px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.project-info h3 {
+  margin: 0 0 5px 0;
+}
+
+/******************************************************
+ * Works（制作物一覧）
+ ******************************************************/
+.works {
+  padding: 60px 20px;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.work-card {
+  background: var(--gray);
+  padding: 15px;
+  border-radius: 12px;
+  border-left: 6px solid var(--blue);
+}
+
+.work-img {
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.work-card h3 {
+  margin: 8px 0 5px 0;
+  color: var(--blue);
+  font-size: 20px;
+}
+
+/******************************************************
+ * Project Detail
+ ******************************************************/
+.project-hero {
+  padding: 40px 20px 60px;
+  border-left: 8px solid var(--blue);
+}
+
+.project-hero-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.project-title {
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.project-summary {
+  color: #666;
+}
+
+.project-body {
+  padding: 40px 20px;
+}
+
+.project-section {
+  background: var(--gray);
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 6px solid var(--blue);
+  margin-bottom: 40px;
+}
+
+.back-btn {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+/******************************************************
+ * History（年表）
+ ******************************************************/
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.tl-item {
+  background: var(--gray);
+  padding: 18px;
+  border-radius: 10px;
+  border-left: 6px solid var(--blue);
+  display: flex;
+  gap: 20px;
+}
+
+.tl-year {
+  width: 70px;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+/******************************************************
+ * Footer
+ ******************************************************/
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #fafafa;
+  color: #777;
+  margin-top: 40px;
+}
+
+/******************************************************
+ * Admin Layout
+ ******************************************************/
+.admin-body {
+  background: #f7f7f7;
+  padding: 40px 0;
+  font-family: sans-serif;
+}
+
+.admin-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.06);
+}
+
+.admin-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.admin-section-title {
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.admin-card {
+  background: #fafafa;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-thumb {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.admin-card-title {
+  font-size: 1rem;
+}
+
+.admin-actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-btn {
+  padding: 6px 12px;
+  background: #4aa3ff;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.delete-btn {
+  padding: 6px 12px;
+  background: #ff5757;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background: #1d8aff;
+}
+
+.delete-btn:hover {
+  background: #e44242;
+}
+
+.admin-form-section {
+  margin-top: 30px;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-form input,
+.admin-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.submit-btn {
+  background: #2d8bff;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #1174e3;
+}
+
+.admin-divider {
+  margin: 40px 0;
+}
+
+/******************************************************
+ * Login Page
+ ******************************************************/
+.login-body {
+  background: #f2f3f5;
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+  font-family: sans-serif;
+}
+
+.login-container {
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 360px;
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.login-form input {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.login-btn {
+  padding: 12px;
+  background: #2478ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background: #0d5fe0;
+}
+
+.login-error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.page-section {
+  padding: 60px 20px;
+}
+/******************************************************
+ * About Page（Profile UI）
+ ******************************************************/.about-top {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.about-photo img {
+  width: 340px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 6px solid var(--blue);
+  background: #fff;
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-role {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 6px;
+  letter-spacing: 0.05em;
+}
+
+.about-name {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--blue);
+  margin: 0 0 30px 0;
+}
+
+.about-name span {
+  display: block;
+  font-size: 18px;
+  color: #666;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.about-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.about-info-box {
+  background: var(--gray);
+  padding: 18px 20px;
+  border-radius: 14px;
+  border-left: 6px solid var(--blue);
+}
+
+.about-info-box h3 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  color: var(--blue);
+}
+
+.about-info-box p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.about-description-wide {
+  background: var(--gray);
+  padding: 28px 32px;
+  border-radius: 16px;
+  border-left: 6px solid var(--blue);
+}
+
+.about-description-wide p {
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+/******************************************************
+ * Admin Edit UI
+ ******************************************************/
+.edit-card {
+  background: #fafafa;
+  border-radius: 14px;
+  padding: 30px 34px;
+  border-left: 6px solid var(--blue);
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.edit-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.edit-section label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.edit-section input,
+.edit-section textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+.edit-preview {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.edit-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.edit-back {
+  font-weight: 600;
+  color: var(--blue);
+}
+
+
+
+
+/******************************************************
+ * レスポンシブ（既存）
+ ******************************************************/
+@media (max-width: 768px) {
+  .hero {
+    padding: 50px 20px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .profile-wrap {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    flex-direction: column;
+  }
+
+  .thumbnail {
+    width: 100%;
+    height: 160px;
+  }
+
+  .project-hero-img {
+    height: 200px;
+  }
+}
+
+/******************************************************
+ * レスポンシブ（追加：スマホ最適化）
+ ******************************************************/
+@media (max-width: 480px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .profile-img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .container {
+    padding: 0 14px;
+  }
+
+  .admin-container {
+    padding: 20px;
+  }
+
+  .login-container {
+    width: 90%;
+    padding: 30px;
+  }
+}

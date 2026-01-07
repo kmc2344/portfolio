@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Edit</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="admin-body">
+
+<div class="admin-container">
+
+  <h1 class="admin-title">プロジェクトを編集</h1>
+
+  <div class="edit-card">
+
+    <form action="/admin/project/<%= project.id %>/edit" method="POST" class="edit-form">
+
+      <div class="edit-section">
+        <label>Slug</label>
+        <input type="text" name="slug" value="<%= project.slug %>" required>
+      </div>
+
+      <div class="edit-section">
+        <label>タイトル</label>
+        <input type="text" name="title" value="<%= project.title %>" required>
+      </div>
+
+      <div class="edit-section">
+        <label>サマリー</label>
+        <input type="text" name="summary" value="<%= project.summary %>" required>
+      </div>
+
+      <div class="edit-section">
+        <label>概要</label>
+        <textarea name="overview" rows="3"><%= project.overview %></textarea>
+      </div>
+
+      <div class="edit-section">
+        <label>背景</label>
+        <textarea name="background" rows="3"><%= project.background %></textarea>
+      </div>
+
+      <div class="edit-section">
+        <label>アプローチ</label>
+        <textarea name="approach" rows="3"><%= project.approach %></textarea>
+      </div>
+
+      <div class="edit-section">
+        <label>結果</label>
+        <textarea name="result" rows="3"><%= project.result %></textarea>
+      </div>
+
+      <div class="edit-section">
+        <label>現在の画像</label>
+        <img src="<%= project.image %>" class="edit-preview">
+      </div>
+
+      <div class="edit-section">
+        <label>画像パス（Git管理）</label>
+        <input type="text" name="image" value="<%= project.image %>" required>
+        <small style="opacity:0.7; line-height:1.5;">
+          例：/assets/projects/frc.jpg（public/assets に配置）
+        </small>
+      </div>
+
+      <div class="edit-actions">
+        <a href="/admin" class="edit-back">← 戻る</a>
+        <button type="submit" class="submit-btn">保存する</button>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+
+</body>
+</html>
