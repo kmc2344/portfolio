@@ -17,6 +17,7 @@ body {
   color: var(--text);
   background: #fff;
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
 a {
@@ -152,13 +153,14 @@ a {
   border-left: 8px solid var(--blue);
 }
 
-.thumbnail {
-  width: 180px;
-  height: 120px;
-  border-radius: 6px;
+.project-card .thumbnail {
+  width: 200px;
+  height: 140px;
   object-fit: cover;
+  border-radius: 8px;
+  background: #eee;
+  flex-shrink: 0;
 }
-
 .project-info h3 {
   margin: 0 0 5px 0;
 }
@@ -197,6 +199,16 @@ a {
   font-size: 20px;
 }
 
+.work-img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  background: #eee;
+}
+
+
 /******************************************************
  * Project Detail
  ******************************************************/
@@ -207,11 +219,13 @@ a {
 
 .project-hero-img {
   width: 100%;
-  height: 260px;
+  height: 280px;
   object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  background: #eee;
 }
+
 
 .project-title {
   font-size: 32px;
@@ -238,6 +252,16 @@ a {
   color: var(--blue);
   font-weight: 600;
 }
+
+.thumbnail {
+  width: 100%;
+  height: 200px;          /* ★ 統一サイズ */
+  border-radius: 8px;
+  object-fit: cover;
+  background: #eee;
+  flex-shrink: 0;
+}
+
 
 /******************************************************
  * History（年表）
@@ -272,6 +296,68 @@ a {
   background: #fafafa;
   color: #777;
   margin-top: 40px;
+}
+
+/******************************************************
+ * Contact
+ ******************************************************/
+.contact-form {
+  margin-top: 22px;
+  background: var(--gray);
+  padding: 22px 24px;
+  border-radius: 12px;
+  border-left: 6px solid var(--blue);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.contact-field label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.contact-field input,
+.contact-field textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  background: #fff;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact-notice {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.contact-notice.success {
+  background: var(--gray);
+  border-left: 6px solid var(--blue);
+}
+
+.contact-notice.error {
+  background: #fff5f5;
+  border-left: 6px solid #ff5757;
 }
 
 /******************************************************
@@ -322,10 +408,12 @@ a {
 
 .admin-thumb {
   width: 100%;
-  height: 140px;
+  height: 160px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 8px;
+  background: #eee;
 }
+
 
 .admin-card-title {
   font-size: 1rem;
@@ -591,7 +679,7 @@ a {
 
 
 /******************************************************
- * レスポンシブ（既存）
+ * レスポンシブ
  ******************************************************/
 @media (max-width: 768px) {
   .hero {
@@ -616,17 +704,51 @@ a {
   }
 
   .thumbnail {
-    width: 100%;
     height: 160px;
+  }
+
+  .work-img {
+    height: 180px;
   }
 
   .project-hero-img {
     height: 200px;
   }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .about-img,
+  .about-photo,
+  .profile-img {
+    max-width: 100%;
+  }
+  .about-wrap,
+  .about-top,
+  .about-header,
+  .about-profile {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .about-info,
+  .about-meta,
+  .about-card,
+  .about-basic {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .about-description-wide {
+    padding: 18px 18px;
+    border-left: 6px solid var(--blue);
+    background: var(--gray);
+  }
 }
 
 /******************************************************
- * レスポンシブ（追加：スマホ最適化）
+スマホ最適化
  ******************************************************/
 @media (max-width: 480px) {
   .title {
@@ -653,5 +775,9 @@ a {
   .login-container {
     width: 90%;
     padding: 30px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
 }

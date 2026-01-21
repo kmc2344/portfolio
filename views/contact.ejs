@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Portfolio</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<%- include("partials/header") %>
+
+<section class="page-section">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+
+    <p class="intro-text">
+      ご連絡は以下のフォームから送信してください。内容は確認後、必要に応じて返信します。
+    </p>
+
+    <% if (sent) { %>
+      <div class="contact-notice success">
+        送信しました。ありがとうございます。
+      </div>
+    <% } %>
+
+    <% if (error) { %>
+      <div class="contact-notice error">
+        送信に失敗しました。入力内容を確認して、もう一度送信してください。
+      </div>
+    <% } %>
+
+    <form class="contact-form" action="/contact" method="POST">
+      <div class="contact-grid">
+        <div class="contact-field">
+          <label>お名前</label>
+          <input type="text" name="name" placeholder="例：吉田 尚翔" required>
+        </div>
+
+        <div class="contact-field">
+          <label>メールアドレス</label>
+          <input type="email" name="email" placeholder="例：example@gmail.com" required>
+        </div>
+      </div>
+
+      <div class="contact-field">
+        <label>件名（任意）</label>
+        <input type="text" name="subject" placeholder="例：ポートフォリオについて">
+      </div>
+
+      <div class="contact-field">
+        <label>本文</label>
+        <textarea name="message" rows="7" placeholder="内容を入力してください" required></textarea>
+      </div>
+
+      <div class="contact-actions">
+        <button type="submit" class="submit-btn">送信</button>
+      </div>
+    </form>
+
+  </div>
+</section>
+
+<%- include("partials/footer") %>
+
+</body>
+</html>

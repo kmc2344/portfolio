@@ -23,53 +23,105 @@
 <!-- Profile -->
 <section class="profile">
   <div class="container profile-wrap">
-    <img src="/about.JPG" class="profile-img">
+    <img src="/about.JPG" class="profile-img" alt="Profile">
     <div class="profile-text">
       <h2>About Me</h2>
-      <p>ハードとソフトの両方を扱いながら、使う人の体験を意識した開発を続けています。</p>
-      <p>IoT、ロボティクス、Webアプリなど幅広く取り組み、小さな改善を積み重ねる制作を大切にしています。</p>
+      <p>
+        ハードウェアとソフトウェアの両方を扱いながら、使う人の体験を意識した開発を行っている。
+      </p>
+      <p>
+        IoT、ロボティクス、Webアプリといった領域を横断し、小さな違和感を見逃さず、改善を積み重ねる制作姿勢を大切にしている。
+      </p>
     </div>
   </div>
 </section>
 
-<!-- Projects（★ featured Project をDBから表示） -->
+<!-- Projects -->
 <section class="projects">
   <div class="container">
     <h2 class="section-title">Projects</h2>
 
-    <% if (projects.length === 0) { %>
-      <p style="opacity:0.7;">現在、トップに表示するプロジェクトはありません。</p>
-    <% } %>
-
-    <% projects.forEach(project => { %>
-      <div class="project-card">
-        <img src="<%= project.image %>" class="thumbnail">
-        <div class="project-info">
-          <h3><%= project.title %></h3>
-          <p><%= project.summary %></p>
-          <a href="/project/<%= project.slug %>" class="detail-btn">
-            詳細を見る →
-          </a>
-        </div>
+    <!-- FRC -->
+    <div class="project-card">
+      <img src="/assets/Hanabi.JPG" class="thumbnail" alt="FRC Robotics">
+      <div class="project-info">
+        <h3>FRC Robotics（Team Hanabi）</h3>
+        <p>
+          国際的なロボット競技 FRC において、チーム立ち上げから参加。
+          ロボット制御設計や改善を担当し、実機を前提とした試行錯誤を重ねた。
+        </p>
+        <a href="/project/hanabi" class="detail-btn">詳細を見る →</a>
       </div>
-    <% }) %>
+    </div>
+
+    <!-- Sony Project -->
+    <div class="project-card">
+      <img src="/assets/projects_sony.JPG" class="thumbnail" alt="Sony Project">
+      <div class="project-info">
+        <h3>ソニー産学連携プロジェクト</h3>
+        <p>
+          企業と連携し、課題設定から試作・展示までを行ったプロジェクト。
+          技術だけでなく、伝え方や体験設計の重要性を学んだ。
+        </p>
+        <a href="/project/sony" class="detail-btn">詳細を見る →</a>
+      </div>
+    </div>
+
+    <!-- IoT -->
+    <div class="project-card">
+      <img src="/assets/IoT_Class.jpg" class="thumbnail" alt="IoT Project">
+      <div class="project-info">
+        <h3>IoT Prototype</h3>
+        <p>
+          センサーとWeb UIを組み合わせ、データを可視化するIoT試作。
+          「使われること」を前提に、構成とUIを設計した。
+        </p>
+        <a href="/project/iot" class="detail-btn">詳細を見る →</a>
+      </div>
+    </div>
 
   </div>
 </section>
 
-<!-- Works（DBから3件） -->
+<!-- Works -->
 <section class="works">
   <div class="container">
     <h2 class="section-title">Works</h2>
 
     <div class="works-grid">
-      <% works.forEach(work => { %>
-        <div class="work-card">
-          <img src="<%= work.image %>" class="work-img">
-          <h3><%= work.title %></h3>
-          <p><%= work.desc %></p>
-        </div>
-      <% }) %>
+
+      <div class="work-card">
+        <img src="/assets/Class.png" class="work-img" alt="Web App">
+        <h3>家計簿Webアプリ</h3>
+        <p>
+          授業の中で制作したWebアプリ。データの扱い方とUI設計を意識して実装した。
+        </p>
+      </div>
+
+      <div class="work-card">
+        <img src="/assets/blender.png" class="work-img" alt="3DCG">
+        <h3>3DCG Modeling</h3>
+        <p>
+          Blenderを用いた3DCG制作。形状だけでなく、見せ方や構図にも注目している。
+        </p>
+      </div>
+
+      <div class="work-card">
+        <img src="/assets/blender2.png" class="work-img" alt="3DCG">
+        <h3>3DCG Practice</h3>
+        <p>
+          試行錯誤を通じて、モデリングとレンダリングの基礎を身につけた。
+        </p>
+      </div>
+
+      <div class="work-card">
+        <img src="/assets/blender3.png" class="work-img" alt="3DCG">
+        <h3>3DCG Study</h3>
+        <p>
+          技術練習として制作した3DCG作品。継続的なアウトプットを重視している。
+        </p>
+      </div>
+
     </div>
 
     <a href="/works" class="detail-btn" style="margin-top:20px;">
@@ -85,22 +137,31 @@
 
     <div class="timeline">
       <div class="tl-item">
-        <div class="tl-year">2022</div>
+        <div class="tl-year">2019年8月</div>
+        <div class="tl-content">四万十川55km下りに挑戦。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2023年4月</div>
         <div class="tl-content">高専入学。</div>
       </div>
       <div class="tl-item">
-        <div class="tl-year">2023</div>
-        <div class="tl-content">IoT試作を開始。</div>
+        <div class="tl-year">2023年6月</div>
+        <div class="tl-content">FRCチーム Hanabi を立ち上げ。</div>
       </div>
       <div class="tl-item">
-        <div class="tl-year">2024</div>
-        <div class="tl-content">FRCを立ち上げ。</div>
+        <div class="tl-year">2024年4月</div>
+        <div class="tl-content">FRC ハワイ地区大会に出場。</div>
       </div>
       <div class="tl-item">
-        <div class="tl-year">2025</div>
-        <div class="tl-content">ポートフォリオ制作へ。</div>
+        <div class="tl-year">2024年11月</div>
+        <div class="tl-content">KMC×hitoto に参加し、まるごと祭で展示。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2025年7月</div>
+        <div class="tl-content">ソニー産学連携プロジェクトに参加。</div>
       </div>
     </div>
+
   </div>
 </section>
 

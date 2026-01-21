@@ -1,17 +1,17 @@
-datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
-}
-
 generator client {
   provider = "prisma-client-js"
 }
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
 
 model Work {
-  id       Int     @id @default(autoincrement())
-  title    String
-  desc     String
-  image    String
+  id        Int      @id @default(autoincrement())
+  title     String
+  desc      String
+  image     String?   // ← OK（任意）
   createdAt DateTime @default(now())
 }
 
@@ -24,7 +24,7 @@ model Project {
   background  String
   approach    String
   result      String
-  image       String
+  image       String?
   featured    Boolean  @default(false)
   createdAt   DateTime @default(now())
 }

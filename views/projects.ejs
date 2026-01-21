@@ -16,20 +16,76 @@
 
     <h1 class="section-title">Projects</h1>
 
-    <% projects.forEach(project => { %>
-      <div class="project-card">
-        <img src="<%= project.image %>" class="thumbnail">
-        <div class="project-info">
-          <h3><%= project.title %></h3>
-          <p><%= project.summary %></p>
-          <a href="/project/<%= project.slug %>" class="detail-btn">詳細を見る →</a>
-        </div>
+    <!-- =========================
+         Static Projects
+    ========================== -->
+
+    <!-- Hanabi -->
+    <div class="project-card">
+      <img src="/assets/Hanabi.JPG" class="thumbnail" alt="FRC Robotics">
+      <div class="project-info">
+        <h3>FRC Robotics（Team Hanabi）</h3>
+        <p>
+          国際的なロボット競技 FRC において、チーム立ち上げから参加。
+          実機を前提としたロボット制御と改善に取り組んだ。
+        </p>
+        <a href="/project/hanabi" class="detail-btn">
+          詳細を見る →
+        </a>
       </div>
-    <% }) %>
+    </div>
+
+    <!-- Sony -->
+    <div class="project-card">
+      <img src="/assets/projects_sony.JPG" class="thumbnail" alt="Sony Project">
+      <div class="project-info">
+        <h3>ソニー産学連携プロジェクト</h3>
+        <p>
+          企業と連携し、課題設定から試作・展示までを行ったプロジェクト。
+          技術と体験設計の関係性を学んだ。
+        </p>
+        <a href="/project/sony" class="detail-btn">
+          詳細を見る →
+        </a>
+      </div>
+    </div>
+
+    <!-- IoT -->
+    <div class="project-card">
+      <img src="/assets/IoT_Class.jpg" class="thumbnail" alt="IoT Project">
+      <div class="project-info">
+        <h3>IoT Prototype</h3>
+        <p>
+          センサーとWeb UIを組み合わせ、データを可視化するIoT試作。
+          「使われること」を前提に構成とUIを設計した。
+        </p>
+        <a href="/project/iot" class="detail-btn">
+          詳細を見る →
+        </a>
+      </div>
+    </div>
+
+    <!-- =========================
+         DB 追加分（自然に続けて表示）
+    ========================== -->
+    <% if (extraProjects && extraProjects.length > 0) { %>
+      <% extraProjects.forEach(project => { %>
+        <div class="project-card">
+          <img
+            src="<%= project.image || '/assets/projects_sony.JPG' %>"
+            class="thumbnail"
+            alt="<%= project.title %>"
+          >
+          <div class="project-info">
+            <h3><%= project.title %></h3>
+            <p><%= project.summary %></p>
+          </div>
+        </div>
+      <% }) %>
+    <% } %>
 
   </div>
 </section>
-
 
 <%- include("partials/footer") %>
 

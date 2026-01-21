@@ -22,7 +22,11 @@
     <div class="admin-grid">
       <% works.forEach(w => { %>
         <div class="admin-card">
-          <img src="<%= w.image %>" class="admin-thumb">
+          <img
+            src="<%= w.image || '/assets/Class.png' %>"
+            class="admin-thumb"
+            alt="<%= w.title %>"
+          >
 
           <div class="admin-card-content">
             <h3 class="admin-card-title"><%= w.title %></h3>
@@ -32,7 +36,11 @@
             <a href="/admin/work/<%= w.id %>/edit" class="edit-btn">編集</a>
 
             <form action="/admin/work/<%= w.id %>/delete" method="POST" style="margin:0;">
-              <button type="submit" class="delete-btn" onclick="return confirm('本当に削除しますか？')">
+              <button
+                type="submit"
+                class="delete-btn"
+                onclick="return confirm('本当に削除しますか？')"
+              >
                 削除
               </button>
             </form>
@@ -54,10 +62,10 @@
         type="text"
         name="image"
         placeholder="画像パス（例：/assets/works/sample.jpg）"
-        required
       >
       <small style="opacity:0.7; line-height:1.5;">
-        画像は Git 管理（public/assets 配下など）を推奨。Render でも消えずに運用できます。
+        画像は Git 管理（public/assets 配下など）を推奨。<br>
+        未入力の場合はデフォルト画像が表示されます。
       </small>
 
       <button type="submit" class="submit-btn">追加</button>
@@ -73,7 +81,11 @@
     <div class="admin-grid">
       <% projects.forEach(p => { %>
         <div class="admin-card">
-          <img src="<%= p.image %>" class="admin-thumb">
+          <img
+            src="<%= p.image || '/assets/projects_sony.JPG' %>"
+            class="admin-thumb"
+            alt="<%= p.title %>"
+          >
 
           <div class="admin-card-content">
             <h3 class="admin-card-title"><%= p.title %></h3>
@@ -95,7 +107,11 @@
             <a href="/admin/project/<%= p.id %>/edit" class="edit-btn">編集</a>
 
             <form action="/admin/project/<%= p.id %>/delete" method="POST" style="margin:0;">
-              <button type="submit" class="delete-btn" onclick="return confirm('本当に削除しますか？')">
+              <button
+                type="submit"
+                class="delete-btn"
+                onclick="return confirm('本当に削除しますか？')"
+              >
                 削除
               </button>
             </form>
@@ -127,10 +143,10 @@
         type="text"
         name="image"
         placeholder="画像パス（例：/assets/projects/frc.jpg）"
-        required
       >
       <small style="opacity:0.7; line-height:1.5;">
-        画像は public/assets に配置して Git で管理。DB にはパスだけ保存します。
+        画像は public/assets に配置して Git で管理。<br>
+        未入力時はデフォルト画像が表示されます。
       </small>
 
       <button type="submit" class="submit-btn">追加</button>

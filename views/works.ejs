@@ -18,19 +18,68 @@
 
     <div class="works-grid">
 
-      <% works.forEach(work => { %>
+      <!-- =========================
+           Static Works（固定表示）
+      ========================== -->
+
+      <!-- 家計簿Webアプリ -->
       <div class="work-card">
-        <img src="<%= work.image %>" class="work-img">
-        <h3><%= work.title %></h3>
-        <p><%= work.desc %></p>
+        <img src="/assets/Class.png" class="work-img" alt="家計簿Webアプリ">
+        <h3>家計簿Webアプリ</h3>
+        <p>
+          授業の中で制作したWebアプリ。
+          データ構造の設計と、継続して使えるUIを意識して実装した。
+        </p>
       </div>
-      <% }) %>
+
+      <!-- 3DCG Modeling -->
+      <div class="work-card">
+        <img src="/assets/blender.png" class="work-img" alt="3DCG Modeling">
+        <h3>3DCG Modeling</h3>
+        <p>
+          Blenderを用いた3DCG制作。
+          形状だけでなく、視点や構図による印象の違いを意識している。
+        </p>
+      </div>
+
+      <!-- 3DCG Practice -->
+      <div class="work-card">
+        <img src="/assets/blender2.png" class="work-img" alt="3DCG Practice">
+        <h3>3DCG Practice</h3>
+        <p>
+          モデリングとレンダリングの基礎を習得するための練習作品。
+          試行錯誤を通じて制作プロセスを学んだ。
+        </p>
+      </div>
+
+      <!-- 3DCG Study -->
+      <div class="work-card">
+        <img src="/assets/blender3.png" class="work-img" alt="3DCG Study">
+        <h3>3DCG Study</h3>
+        <p>
+          技術練習として継続的に制作した3DCG作品。
+          アウトプットを重ねることを重視している。
+        </p>
+      </div>
+
+      <% if (extraWorks && extraWorks.length > 0) { %>
+        <% extraWorks.forEach(work => { %>
+          <div class="work-card">
+            <img
+              src="<%= work.image || '/assets/Class.png' %>"
+              class="work-img"
+              alt="<%= work.title %>"
+            >
+            <h3><%= work.title %></h3>
+            <p><%= work.desc %></p>
+          </div>
+        <% }) %>
+      <% } %>
 
     </div>
 
   </div>
 </section>
-
 
 <%- include("partials/footer") %>
 
