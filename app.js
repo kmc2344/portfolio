@@ -315,7 +315,5 @@ app.post("/admin/project/:id/delete", requireLogin, async (req, res) => {
 // ==============================
 // Server
 // ==============================
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Server running → http://localhost:${PORT}`);
-});
+
+module.exports = app;
